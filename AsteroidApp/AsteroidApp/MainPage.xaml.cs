@@ -14,5 +14,15 @@ namespace AsteroidApp
         {
             InitializeComponent();
         }
+
+        private void MenuButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MenuPage());
+        }
+
+        private void SortButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
