@@ -30,17 +30,18 @@
                FontSize="20"
                FontAttributes="Bold"/>
 
-        <Label x:Name="asteroidsLabel"></Label>
-
-        <CollectionView x:Name="asteroidsCollection">
-            <CollectionView.ItemTemplate>
+        
+        <ListView x:Name="objectListView" Margin="20" RowHeight="80">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout>
-                        <Label Text=""/>
-                    </StackLayout>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </StackLayout>
 
