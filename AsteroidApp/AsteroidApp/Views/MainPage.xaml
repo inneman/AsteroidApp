@@ -30,6 +30,17 @@
                FontSize="20"
                FontAttributes="Bold"/>
 
+        <Label x:Name="asteroidsLabel"></Label>
+
+        <CollectionView x:Name="asteroidsCollection">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text=""/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
     </StackLayout>
 
