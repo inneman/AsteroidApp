@@ -18,7 +18,7 @@ namespace AsteroidApp
         public MainPage()
         {
             InitializeComponent();
-            GetJson();
+            GetJsonAsync();
         }
 
         private void MenuButton_Clicked(object sender, EventArgs e)
@@ -38,6 +38,26 @@ namespace AsteroidApp
                 "start_date=2020-11-18&end_date=2020-11-19" +
                 "&api_key=QK36Tn9laJtbIDk2hO2PFuU9JiAxnubncCq7nF6f").Result.Content.ReadAsStringAsync().Result;
             JObject asteroids = JObject.Parse(response);
+            JArray asteroidsData = (JArray)asteroids["near_earth_objects"]["2020-11-19"];
+
+            List<DangerousObject> dangerousList = new List<DangerousObject>();
+            for (int i = 0; i < asteroidsData.Count; i++)
+            {
+                DangerousObject dObj = asteroidsData[i].ToObject<DangerousObject>();
+                dangerousList.Add(dObj);
+            }
+
+            objectListView.ItemsSource = dangerousList;
+        }
+
+        public async Task GetJsonAsync()
+        {
+            var client = new HttpClient();
+            var response = await client.GetAsync("https://api.nasa.gov/neo/rest/v1/feed?" +
+                "start_date=2020-11-18&end_date=2020-11-19" +
+                "&api_key=QK36Tn9laJtbIDk2hO2PFuU9JiAxnubncCq7nF6f");
+            var content = await response.Content.ReadAsStringAsync();
+            JObject asteroids = JObject.Parse(content);
             JArray asteroidsData = (JArray)asteroids["near_earth_objects"]["2020-11-19"];
 
             List<DangerousObject> dangerousList = new List<DangerousObject>();
