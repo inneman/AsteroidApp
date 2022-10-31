@@ -24,10 +24,10 @@
                    FontAttributes="Bold"/>
             <Label Text="{Binding Nasa_jpl_url}"
                    FontSize="20"/>
-            <Label Text="Date: "
+            <Label Text="Absolute magnitude h: "
                    FontSize="20"
                    FontAttributes="Bold"/>
-            <Label Text="{Binding ApproachDate}"
+            <Label Text="{Binding Absolute_magnitude_h}"
                    FontSize="20"/>
         </StackLayout>
     </ContentPage.Content>
