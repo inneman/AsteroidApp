@@ -19,7 +19,7 @@
                          Clicked="MenuButton_Clicked"
                          Grid.Column="0"
                          HorizontalOptions="Start"/>
-            <ImageButton Source="sortImage.png"
+            <Button      Text="Sort by"
                          x:Name="SortButton"
                          Clicked="SortButton_Clicked"
                          Grid.Column="1"/>
@@ -31,18 +31,35 @@
                FontAttributes="Bold"/>
 
         
-        <ListView x:Name="objectListView" Margin="20" RowHeight="80">
+        <ListView x:Name="objectListView" Margin="20" RowHeight="80" ItemSelected="objectListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding Name}"/>
+                            <Label Text="Name:" 
+                                   VerticalTextAlignment="Center" 
+                                   FontSize="16"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Name}" 
+                                   VerticalTextAlignment="Center" 
+                                   FontSize="16"/>
+                            <Label Text="Id:" 
+                                   VerticalTextAlignment="Center" 
+                                   FontSize="16"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Id}" 
+                                   VerticalTextAlignment="Center" 
+                                   FontSize="16"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
+        <Button x:Name="updateButton"
+                Clicked="updateButton_Clicked"
+                Text="Update data"
+                Margin="40, 0, 40, 0"/>
     </StackLayout>
 
 </ContentPage>

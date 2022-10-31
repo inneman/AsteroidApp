@@ -1,22 +1,24 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using AsteroidApp.Models;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AsteroidApp
+namespace AsteroidApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MenuPage : ContentPage
+    public partial class ObjectPage : ContentPage
     {
-        public MenuPage()
+        public ObjectPage(object dangerousObject)
         {
             InitializeComponent();
+
+            layout.BindingContext = dangerousObject;
         }
     }
 }

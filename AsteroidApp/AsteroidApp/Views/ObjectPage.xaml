@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AsteroidApp.Views.ObjectPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="layout" Margin="20">
+            <Label Text="Name: "
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding Name}"
+                   FontSize="20"/>
+            <Label Text="Id: "
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding Id}"
+                   FontSize="20"/>
+            <Label Text="Dangerous: "
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding Is_potentially_hazardous_asteroid}"
+                   FontSize="20"/>
+            <Label Text="Nasa jpl url: "
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding Nasa_jpl_url}"
+                   FontSize="20"/>
+            <Label Text="Date: "
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding ApproachDate}"
+                   FontSize="20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
