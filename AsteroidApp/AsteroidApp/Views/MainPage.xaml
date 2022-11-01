@@ -14,11 +14,12 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <ImageButton Source="menuImage.png"
-                         x:Name="MenuButton"
-                         Clicked="MenuButton_Clicked"
-                         Grid.Column="0"
-                         HorizontalOptions="Start"/>
+            <Picker Grid.Column="0" Title="Pick" x:Name="sortPicker">
+                <Picker.Items>
+                    <x:String>Name</x:String>
+                    <x:String>Dangerous</x:String>
+                </Picker.Items>
+            </Picker>
             <Button      Text="Sort by"
                          x:Name="SortButton"
                          Clicked="SortButton_Clicked"

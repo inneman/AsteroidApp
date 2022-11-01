@@ -22,14 +22,17 @@ namespace AsteroidApp
             GetJsonAsync();
         }
 
-        private void MenuButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MenuPage());
-        }
-
         private void SortButton_Clicked(object sender, EventArgs e)
         {
-            
+            if (sortPicker.SelectedIndex == 0)
+            {
+                dangerousList = dangerousList.OrderBy(x => x.Name).ToList();
+            }
+            if (sortPicker.SelectedIndex == 1)
+            {
+                dangerousList = dangerousList.OrderByDescending(x => x.Is_potentially_hazardous_asteroid).ToList();
+            }
+            objectListView.ItemsSource = dangerousList;
         }
 
         List<DangerousObject> dangerousList = new List<DangerousObject>();
