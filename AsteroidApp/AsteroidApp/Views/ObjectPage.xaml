@@ -29,6 +29,11 @@
                    FontAttributes="Bold"/>
             <Label Text="{Binding Absolute_magnitude_h}"
                    FontSize="20"/>
+            <Label Text="Close approach data: "
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding Close_approach_data}"
+                   FontSize="20"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
